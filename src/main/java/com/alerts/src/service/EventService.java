@@ -14,7 +14,7 @@ import com.alerts.src.request.EventRequest;
 import com.alerts.src.response.EventResponse;
 
 @Path("events")
-public interface MyraEventService {
+public interface EventService {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public EventResponse getAlerts();
