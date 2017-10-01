@@ -1,7 +1,10 @@
 package com.alerts.src.service.impl;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
 
 import javax.ws.rs.core.Response;
@@ -15,6 +18,7 @@ import com.alerts.src.mongo.repository.EventRepository;
 import com.alerts.src.request.EventRequest;
 import com.alerts.src.request.EventRequest.Alert;
 import com.alerts.src.response.EventResponse;
+import com.alerts.src.response.EventResponse.Alerts;
 import com.alerts.src.service.MyraEventService;
 
 @Component
@@ -25,8 +29,18 @@ public class MyraEventServiceImpl implements MyraEventService {
 	
 	@Override
 	public EventResponse getAlerts() {
-		// TODO Auto-generated method stub
-		return null;
+		EventResponse response = new EventResponse();
+		List<Alerts> alertList = new ArrayList<>();
+		List<EventModel> eventModelList = (List<EventModel>) eventRepository.findAll();
+		for (EventModel model : eventModelList) {
+			Alerts alert = new Alerts();
+			alert.setDelay(model.getDelay());
+			alert.setDescription(model.getDescription());
+			alert.setReferenceId(model.getReferneceId());
+			alertList.add(alert);
+		}
+		response.setAlerts(alertList);
+		return response;
 	}
 
 	@Override
@@ -57,8 +71,8 @@ public class MyraEventServiceImpl implements MyraEventService {
 
 	@Override
 	public Response revokeAlert(String refernceId) {
-		// TODO Auto-generated method stub
-		return null;
+		eventRepository.deleteByReferneceId(refernceId);
+		return Response.status(204).build();
 	}
 
 }
