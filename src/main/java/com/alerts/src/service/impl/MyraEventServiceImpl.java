@@ -1,9 +1,12 @@
 package com.alerts.src.service.impl;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 import javax.ws.rs.core.Response;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -29,13 +32,27 @@ public class MyraEventServiceImpl implements MyraEventService {
 	@Override
 	public Response addAlert(EventRequest eventRequest) {
 		EventModel model = new EventModel();
-		Alert alert = eventRequest.getAlert();
-		model.setDelay(alert.getDelay());
-		model.setDescription(alert.getDescription());
-		model.setReferneceId(alert.getReferenceId());
-		model.setCreatedAt(new Date().toString());
-		eventRepository.save(model);
-		return null;
+		int status;
+		String message;
+		if (eventRequest != null && eventRequest.getAlert() != null
+				&& StringUtils.isNotBlank(eventRequest.getAlert().getReferenceId())
+				&& eventRequest.getAlert().getDelay() > 0) {
+			Alert alert = eventRequest.getAlert();
+			model.setDelay(alert.getDelay());
+			model.setDescription(alert.getDescription());
+			model.setReferneceId(alert.getReferenceId());
+			SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss.sss"); 
+			format.setTimeZone(TimeZone.getTimeZone("IST"));
+			model.setCreatedAt(format.format(new Date()));
+			eventRepository.save(model);
+			status = 201;
+			message = "Alert added successfully!!!";
+		} else {
+			status = 400;
+			message = "Alert Not added, missing required params...";
+		}
+		return Response.status(status).type("text/plain")
+                .entity(message).build();
 	}
 
 	@Override
