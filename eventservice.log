@@ -1,0 +1,845 @@
+2017-10-02 16:41:03.351  INFO 60107 --- [main] com.alerts.src.config.Application        : Starting Application on Parags-MacBook-Pro.local with PID 60107 (/Users/parag/Projects/EventPublishing/target/classes started by parag in /Users/parag/Projects/EventPublishing)
+2017-10-02 16:41:03.354  INFO 60107 --- [main] com.alerts.src.config.Application        : No active profile set, falling back to default profiles: default
+2017-10-02 16:41:03.403  INFO 60107 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@527e5409: startup date [Mon Oct 02 16:41:03 IST 2017]; root of context hierarchy
+2017-10-02 16:41:04.056  INFO 60107 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-10-02 16:41:04.410  INFO 60107 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-10-02 16:41:04.428  INFO 60107 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-10-02 16:41:04.429  INFO 60107 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-10-02 16:41:04.523  INFO 60107 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-10-02 16:41:04.523  INFO 60107 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1123 ms
+2017-10-02 16:41:04.741  INFO 60107 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-10-02 16:41:04.741  INFO 60107 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-10-02 16:41:04.741  INFO 60107 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'com.alerts.src.config.JerseyConfig' to [/*]
+2017-10-02 16:41:04.781  INFO 60107 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Initializing embedded MongoDB instance
+2017-10-02 16:41:04.814  INFO 60107 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : starting...
+2017-10-02 16:41:05.718  INFO 60107 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : extract mongodb-osx-x86_64-3.2.1/bin/mongod
+2017-10-02 16:41:05.719  INFO 60107 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : noting left
+2017-10-02 16:41:05.719  INFO 60107 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : finished
+2017-10-02 16:41:05.720  INFO 60107 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Starting embedded MongoDB instance
+2017-10-02 16:41:05.772 ERROR 60107 --- [main] d.f.e.process.runtime.AbstractProcess    : failed to call onAfterProcessStart()
+
+java.io.IOException: Could not start process: failed errno:48 Address already in use for socket: 127.0.0.1:27000
+2017-10-02T16:41:05.767+0530 E NETWORK  [initandlisten]   addr already in use
+
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.onAfterProcessStart(AbstractMongoProcess.java:79) [de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.process.runtime.AbstractProcess.<init>(AbstractProcess.java:114) ~[de.flapdoodle.embed.process-1.50.2.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.<init>(AbstractMongoProcess.java:53) [de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.MongodProcess.<init>(MongodProcess.java:50) [de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.MongodExecutable.start(MongodExecutable.java:44) [de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.MongodExecutable.start(MongodExecutable.java:34) [de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable.start(Executable.java:101) [de.flapdoodle.embed.process-1.50.2.jar:na]
+	at cz.jirutka.spring.embedmongo.EmbeddedMongoBuilder.build(EmbeddedMongoBuilder.java:102) [embedmongo-spring-1.3.1.jar:1.3.1]
+	at cz.jirutka.spring.embedmongo.EmbeddedMongoFactoryBean.getObject(EmbeddedMongoFactoryBean.java:52) [embedmongo-spring-1.3.1.jar:1.3.1]
+	at com.alerts.src.config.MongoConfig.mongoTemplate(MongoConfig.java:26) [classes/:na]
+	at com.alerts.src.config.MongoConfig$$EnhancerBySpringCGLIB$$453a651b.CGLIB$mongoTemplate$0(<generated>) [classes/:na]
+	at com.alerts.src.config.MongoConfig$$EnhancerBySpringCGLIB$$453a651b$$FastClassBySpringCGLIB$$acd2f83a.invoke(<generated>) [classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) [spring-core-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at com.alerts.src.config.MongoConfig$$EnhancerBySpringCGLIB$$453a651b.mongoTemplate(<generated>) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_112]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_112]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_112]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_112]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at com.alerts.src.config.Application.main(Application.java:10) [classes/:na]
+
+2017-10-02 16:41:05.772  INFO 60107 --- [main] d.f.e.process.runtime.AbstractProcess    : construct de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@5c48c0c0
+2017-10-02 16:41:05.893  WARN 60107 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoTemplate' defined in class path resource [com/alerts/src/config/MongoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.MongoTemplate]: Factory method 'mongoTemplate' threw exception; nested exception is java.io.IOException: Could not start process: failed errno:48 Address already in use for socket: 127.0.0.1:27000
+2017-10-02T16:41:05.767+0530 E NETWORK  [initandlisten]   addr already in use
+
+2017-10-02 16:41:05.895  INFO 60107 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2017-10-02 16:41:05.907  INFO 60107 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2017-10-02 16:41:05.910 ERROR 60107 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoTemplate' defined in class path resource [com/alerts/src/config/MongoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.MongoTemplate]: Factory method 'mongoTemplate' threw exception; nested exception is java.io.IOException: Could not start process: failed errno:48 Address already in use for socket: 127.0.0.1:27000
+2017-10-02T16:41:05.767+0530 E NETWORK  [initandlisten]   addr already in use
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at com.alerts.src.config.Application.main(Application.java:10) [classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.MongoTemplate]: Factory method 'mongoTemplate' threw exception; nested exception is java.io.IOException: Could not start process: failed errno:48 Address already in use for socket: 127.0.0.1:27000
+2017-10-02T16:41:05.767+0530 E NETWORK  [initandlisten]   addr already in use
+
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	... 18 common frames omitted
+Caused by: java.io.IOException: Could not start process: failed errno:48 Address already in use for socket: 127.0.0.1:27000
+2017-10-02T16:41:05.767+0530 E NETWORK  [initandlisten]   addr already in use
+
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.onAfterProcessStart(AbstractMongoProcess.java:79) ~[de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.process.runtime.AbstractProcess.<init>(AbstractProcess.java:114) ~[de.flapdoodle.embed.process-1.50.2.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.<init>(AbstractMongoProcess.java:53) ~[de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.MongodProcess.<init>(MongodProcess.java:50) ~[de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.MongodExecutable.start(MongodExecutable.java:44) ~[de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.MongodExecutable.start(MongodExecutable.java:34) ~[de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable.start(Executable.java:101) ~[de.flapdoodle.embed.process-1.50.2.jar:na]
+	at cz.jirutka.spring.embedmongo.EmbeddedMongoBuilder.build(EmbeddedMongoBuilder.java:102) ~[embedmongo-spring-1.3.1.jar:1.3.1]
+	at cz.jirutka.spring.embedmongo.EmbeddedMongoFactoryBean.getObject(EmbeddedMongoFactoryBean.java:52) ~[embedmongo-spring-1.3.1.jar:1.3.1]
+	at com.alerts.src.config.MongoConfig.mongoTemplate(MongoConfig.java:26) ~[classes/:na]
+	at com.alerts.src.config.MongoConfig$$EnhancerBySpringCGLIB$$453a651b.CGLIB$mongoTemplate$0(<generated>) ~[classes/:na]
+	at com.alerts.src.config.MongoConfig$$EnhancerBySpringCGLIB$$453a651b$$FastClassBySpringCGLIB$$acd2f83a.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) ~[spring-core-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at com.alerts.src.config.MongoConfig$$EnhancerBySpringCGLIB$$453a651b.mongoTemplate(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_112]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_112]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_112]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_112]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	... 19 common frames omitted
+
+2017-10-02 16:41:21.895  INFO 60115 --- [main] com.alerts.src.config.Application        : Starting Application on Parags-MacBook-Pro.local with PID 60115 (/Users/parag/Projects/EventPublishing/target/classes started by parag in /Users/parag/Projects/EventPublishing)
+2017-10-02 16:41:21.898  INFO 60115 --- [main] com.alerts.src.config.Application        : No active profile set, falling back to default profiles: default
+2017-10-02 16:41:21.938  INFO 60115 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@527e5409: startup date [Mon Oct 02 16:41:21 IST 2017]; root of context hierarchy
+2017-10-02 16:41:22.524  INFO 60115 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-10-02 16:41:22.824  INFO 60115 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-10-02 16:41:22.833  INFO 60115 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-10-02 16:41:22.834  INFO 60115 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-10-02 16:41:22.918  INFO 60115 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-10-02 16:41:22.918  INFO 60115 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 983 ms
+2017-10-02 16:41:23.128  INFO 60115 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-10-02 16:41:23.129  INFO 60115 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-10-02 16:41:23.129  INFO 60115 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'com.alerts.src.config.JerseyConfig' to [/*]
+2017-10-02 16:41:23.165  INFO 60115 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Initializing embedded MongoDB instance
+2017-10-02 16:41:23.195  INFO 60115 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : starting...
+2017-10-02 16:41:24.063  INFO 60115 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : extract mongodb-osx-x86_64-3.2.1/bin/mongod
+2017-10-02 16:41:24.064  INFO 60115 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : noting left
+2017-10-02 16:41:24.064  INFO 60115 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : finished
+2017-10-02 16:41:24.064  INFO 60115 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Starting embedded MongoDB instance
+2017-10-02 16:41:24.430  INFO 60115 --- [main] d.f.embed.process.runtime.Executable     : start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@5fd62371
+2017-10-02 16:41:24.653  INFO 60115 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-10-02 16:41:24.713  INFO 60115 --- [cluster-ClusterId{value='59d21edcbc4043ead36c5145', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27000
+2017-10-02 16:41:24.714  INFO 60115 --- [cluster-ClusterId{value='59d21edcbc4043ead36c5145', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 1]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=523746}
+2017-10-02 16:41:25.092  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : note: noprealloc may hurt performance in many applications
+2017-10-02 16:41:25.107  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:25.106+0530 I CONTROL  [initandlisten] MongoDB starting : pid=60118 port=63158 dbpath=/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-2f548bfa-75a2-4bc2-9050-2b632def029d 64-bit host=Parags-MacBook-Pro.local
+2017-10-02 16:41:25.107  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:25.107+0530 I CONTROL  [initandlisten] db version v3.2.2
+2017-10-02 16:41:25.107  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:25.107+0530 I CONTROL  [initandlisten] git version: 6e71d0d568e134c029203593b00a0103e7cdf30b
+2017-10-02 16:41:25.107  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:25.107+0530 I CONTROL  [initandlisten] allocator: system
+2017-10-02 16:41:25.107  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:25.107+0530 I CONTROL  [initandlisten] modules: none
+2017-10-02 16:41:25.108  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:25.107+0530 I CONTROL  [initandlisten] build environment:
+2017-10-02 16:41:25.108  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:25.107+0530 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-02 16:41:25.108  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:25.107+0530 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-02 16:41:25.108  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:25.107+0530 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", http: { enabled: false }, port: 63158 }, security: { authorization: "disabled" }, storage: { dbPath: "/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-2f548bfa-75a2-4bc2-9050-2b632def029d", journal: { enabled: false }, mmapv1: { preallocDataFiles: false, smallFiles: true }, syncPeriodSecs: 0.0 } }
+2017-10-02 16:41:25.108  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:25.107+0530 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=9G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=0,log_size=2GB),statistics_log=(wait=0),,log=(enabled=false),
+2017-10-02 16:41:25.308  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:25.308+0530 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2017-10-02 16:41:25.399  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:25.309+0530 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with dire2017-10-02T16:41:25.399+0530 I NETWORK  [initandlisten] waiting for connections on port 63158
+2017-10-02 16:41:25.401  INFO 60115 --- [main] d.f.embed.process.runtime.Executable     : start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@6ad6fa53
+2017-10-02 16:41:25.410  INFO 60115 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:63158], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-10-02 16:41:25.411  INFO 60115 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:63158 to client view of cluster
+2017-10-02 16:41:25.413  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:25.412+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63159 #1 (1 connection now open)
+2017-10-02 16:41:25.414  INFO 60115 --- [cluster-ClusterId{value='59d21eddbc4043ead36c5146', description='null'}-localhost:63158] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:1}] to localhost:63158
+2017-10-02 16:41:25.415  INFO 60115 --- [cluster-ClusterId{value='59d21eddbc4043ead36c5146', description='null'}-localhost:63158] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:63158, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=316217}
+2017-10-02 16:41:25.415  INFO 60115 --- [cluster-ClusterId{value='59d21eddbc4043ead36c5146', description='null'}-localhost:63158] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2017-10-02 16:41:25.541  INFO 60115 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-10-02 16:41:25.660  INFO 60115 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-10-02 16:41:25.664  INFO 60115 --- [main] com.alerts.src.config.Application        : Started Application in 3.972 seconds (JVM running for 4.365)
+2017-10-02 16:41:34.724  INFO 60115 --- [cluster-ClusterId{value='59d21edcbc4043ead36c5145', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27000
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:127) ~[mongo-java-driver-3.4.3.jar:na]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_112]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_112]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_112]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_112]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_112]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_112]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_112]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:57) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongo-java-driver-3.4.3.jar:na]
+	... 3 common frames omitted
+
+2017-10-02 16:41:45.660  INFO 60115 --- [RMI TCP Connection(2)-192.168.0.5] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-10-02 16:41:45.660  INFO 60115 --- [RMI TCP Connection(2)-192.168.0.5] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@527e5409: startup date [Mon Oct 02 16:41:21 IST 2017]; root of context hierarchy
+2017-10-02 16:41:45.664  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.664+0530 I NETWORK  [conn1] end connection 127.0.0.1:63159 (0 connections now open)
+2017-10-02 16:41:45.664  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.664+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63175 #2 (2 connections now open)
+2017-10-02 16:41:45.664  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.664+0530 I COMMAND  [conn2] terminating, shutdown command received
+2017-10-02 16:41:45.664  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.664+0530 I FTDC     [conn2] Shutting down full-time diagnostic data capture
+2017-10-02 16:41:45.666  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.666+0530 I CONTROL  [conn2] now exiting
+2017-10-02 16:41:45.666  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.666+0530 I NETWORK  [conn2] shutdown: going to close listening sockets...
+2017-10-02 16:41:45.666  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.666+0530 I NETWORK  [conn2] closing listening socket: 5
+2017-10-02 16:41:45.666  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.666+0530 I NETWORK  [conn2] closing listening socket: 6
+2017-10-02 16:41:45.667  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.667+0530 I NETWORK  [conn2] removing socket file: /tmp/mongodb-63158.sock
+2017-10-02 16:41:45.667  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.667+0530 I NETWORK  [conn2] shutdown: going to flush diaglog...
+2017-10-02 16:41:45.667  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.667+0530 I NETWORK  [conn2] shutdown: going to close sockets...
+2017-10-02 16:41:45.667  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.667+0530 I STORAGE  [conn2] WiredTigerKVEngine shutting down
+2017-10-02 16:41:45.710  INFO 60115 --- [RMI TCP Connection(3)-192.168.0.5] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-10-02 16:41:45.742  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.741+0530 I STORAGE  [conn2] shutdown: removing fs lock...
+2017-10-02 16:41:45.742  INFO 60115 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T16:41:45.742+0530 I CONTROL  [conn2] dbexit:  rc: 0
+2017-10-02 16:41:45.778  INFO 60115 --- [RMI TCP Connection(2)-192.168.0.5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-10-02 16:41:45.843  WARN 60115 --- [Thread-3] d.flapdoodle.embed.mongo.runtime.Mongod  : sendShutdown localhost/127.0.0.1:27000
+
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_112]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_112]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_112]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_112]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_112]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_112]
+	at de.flapdoodle.embed.mongo.runtime.Mongod.sendShutdown(Mongod.java:86) ~[de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.sendStopToMongoInstance(AbstractMongoProcess.java:133) [de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.stopInternal(AbstractMongoProcess.java:107) [de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.process.runtime.AbstractProcess.stop(AbstractProcess.java:170) [de.flapdoodle.embed.process-1.50.2.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable.stop(Executable.java:73) [de.flapdoodle.embed.process-1.50.2.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable$JobKiller.run(Executable.java:90) [de.flapdoodle.embed.process-1.50.2.jar:na]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_112]
+
+2017-10-02 16:41:45.945  WARN 60115 --- [Thread-3] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod with db command, try next
+2017-10-02 16:41:45.963  INFO 60115 --- [Thread-3] d.f.e.process.runtime.ProcessControl     : execSuccess: false [kill, -2, 60117]
+2017-10-02 16:41:45.964  WARN 60115 --- [Thread-3] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod, try next
+2017-10-02 16:41:45.964  WARN 60115 --- [Thread-3] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod the second time, try one last thing
+2017-10-02 16:41:45.965  WARN 60115 --- [Thread-3] d.f.e.p.store.CachingArtifactStore       : Already removed de.flapdoodle.embed.process.extract.ImmutableExtractedFileSet@6c60ad06 for PRODUCTION:OS_X:B64, emergency shutdown?
+2017-10-02 17:16:23.837  INFO 60764 --- [main] com.alerts.src.config.Application        : Starting Application on Parags-MacBook-Pro.local with PID 60764 (/Users/parag/Projects/EventPublishing/target/classes started by parag in /Users/parag/Projects/EventPublishing)
+2017-10-02 17:16:23.839  INFO 60764 --- [main] com.alerts.src.config.Application        : No active profile set, falling back to default profiles: default
+2017-10-02 17:16:23.889  INFO 60764 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@527e5409: startup date [Mon Oct 02 17:16:23 IST 2017]; root of context hierarchy
+2017-10-02 17:16:24.493  INFO 60764 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-10-02 17:16:24.799  INFO 60764 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-10-02 17:16:24.809  INFO 60764 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-10-02 17:16:24.810  INFO 60764 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-10-02 17:16:24.884  INFO 60764 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-10-02 17:16:24.884  INFO 60764 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 998 ms
+2017-10-02 17:16:25.115  INFO 60764 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-10-02 17:16:25.115  INFO 60764 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-10-02 17:16:25.115  INFO 60764 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'com.alerts.src.config.JerseyConfig' to [/*]
+2017-10-02 17:16:25.152  INFO 60764 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Initializing embedded MongoDB instance
+2017-10-02 17:16:25.185  INFO 60764 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : starting...
+2017-10-02 17:16:26.048  INFO 60764 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : extract mongodb-osx-x86_64-3.2.1/bin/mongod
+2017-10-02 17:16:26.049  INFO 60764 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : noting left
+2017-10-02 17:16:26.049  INFO 60764 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : finished
+2017-10-02 17:16:26.050  INFO 60764 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Starting embedded MongoDB instance
+2017-10-02 17:16:26.425  INFO 60764 --- [main] d.f.embed.process.runtime.Executable     : start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@37f21974
+2017-10-02 17:16:26.643  INFO 60764 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-10-02 17:16:26.694  INFO 60764 --- [cluster-ClusterId{value='59d22712bc4043ed5c922a9b', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27000
+2017-10-02 17:16:26.696  INFO 60764 --- [cluster-ClusterId{value='59d22712bc4043ed5c922a9b', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 1]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=554181}
+2017-10-02 17:16:27.013  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : note: noprealloc may hurt performance in many applications
+2017-10-02 17:16:27.029  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.028+0530 I CONTROL  [initandlisten] MongoDB starting : pid=60767 port=63885 dbpath=/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-0b9e18a7-10fe-4e9b-9d77-ef09754bac74 64-bit host=Parags-MacBook-Pro.local
+2017-10-02 17:16:27.030  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.029+0530 I CONTROL  [initandlisten] db version v3.2.2
+2017-10-02 17:16:27.030  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.029+0530 I CONTROL  [initandlisten] git version: 6e71d0d568e134c029203593b00a0103e7cdf30b
+2017-10-02 17:16:27.030  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.029+0530 I CONTROL  [initandlisten] allocator: system
+2017-10-02 17:16:27.030  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.029+0530 I CONTROL  [initandlisten] modules: none
+2017-10-02 17:16:27.030  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.029+0530 I CONTROL  [initandlisten] build environment:
+2017-10-02 17:16:27.030  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.029+0530 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-02 17:16:27.030  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.029+0530 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-02 17:16:27.030  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.029+0530 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", http: { enabled: false }, port: 63885 }, security: { authorization: "disabled" }, storage: { dbPath: "/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-0b9e18a7-10fe-4e9b-9d77-ef09754bac74", journal: { enabled: false }, mmapv1: { preallocDataFiles: false, smallFiles: true }, syncPeriodSecs: 0.0 } }
+2017-10-02 17:16:27.030  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.030+0530 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=9G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=0,log_size=2GB),statistics_log=(wait=0),,log=(enabled=false),
+2017-10-02 17:16:27.249  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.248+0530 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2017-10-02 17:16:27.249  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.249+0530 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-0b9e18a7-10fe-4e9b-9d77-ef09754bac74/diagnostic.data'
+2017-10-02 17:16:27.249  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.249+0530 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2017-10-02 17:16:27.344  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.344+0530 I NETWORK  [initandlisten] waiting for connections on port 63885
+2017-10-02 17:16:27.345  INFO 60764 --- [main] d.f.embed.process.runtime.Executable     : start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@458544e0
+2017-10-02 17:16:27.353  INFO 60764 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:63885], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-10-02 17:16:27.353  INFO 60764 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:63885 to client view of cluster
+2017-10-02 17:16:27.355  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:16:27.355+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63886 #1 (1 connection now open)
+2017-10-02 17:16:27.357  INFO 60764 --- [cluster-ClusterId{value='59d22713bc4043ed5c922a9c', description='null'}-localhost:63885] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:1}] to localhost:63885
+2017-10-02 17:16:27.358  INFO 60764 --- [cluster-ClusterId{value='59d22713bc4043ed5c922a9c', description='null'}-localhost:63885] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:63885, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=336583}
+2017-10-02 17:16:27.358  INFO 60764 --- [cluster-ClusterId{value='59d22713bc4043ed5c922a9c', description='null'}-localhost:63885] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2017-10-02 17:16:27.476  INFO 60764 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-10-02 17:16:27.533  INFO 60764 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-10-02 17:16:27.536  INFO 60764 --- [main] com.alerts.src.config.Application        : Started Application in 3.913 seconds (JVM running for 4.318)
+2017-10-02 17:16:42.371 ERROR 60764 --- [http-nio-8080-exec-1] o.g.j.s.spring.SpringComponentProvider   : None or multiple beans found in Spring context for type class com.alerts.src.service.impl.EventServiceImpl, skipping the type.
+2017-10-02 17:16:42.707  INFO 60764 --- [http-nio-8080-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:2}] to localhost:27000
+2017-10-02 17:16:51.018 ERROR 60764 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[.[.a.s.c.JerseyConfig]    : Servlet.service() for servlet [com.alerts.src.config.JerseyConfig] in context with path [] threw exception [java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at org.springframework.data.mongodb.repository.query.DtoInstantiatingConverter.convert(DtoInstantiatingConverter.java:76) ~[spring-data-mongodb-1.10.7.RELEASE.jar:na]
+	at org.springframework.data.repository.query.ResultProcessor$ChainingConverter.convert(ResultProcessor.java:221) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.repository.query.ResultProcessor$ChainingConverter$1.convert(ResultProcessor.java:209) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.repository.query.ResultProcessor$ChainingConverter.convert(ResultProcessor.java:221) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.repository.query.ResultProcessor.processResult(ResultProcessor.java:162) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.mongodb.repository.query.MongoQueryExecution$ResultProcessingConverter.convert(MongoQueryExecution.java:444) ~[spring-data-mongodb-1.10.7.RELEASE.jar:na]
+	at org.springframework.data.mongodb.repository.query.MongoQueryExecution$ResultProcessingExecution.execute(MongoQueryExecution.java:411) ~[spring-data-mongodb-1.10.7.RELEASE.jar:na]
+	at org.springframework.data.mongodb.repository.query.AbstractMongoQuery.execute(AbstractMongoQuery.java:94) ~[spring-data-mongodb-1.10.7.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:483) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:461) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:56) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at com.sun.proxy.$Proxy66.deleteByReferneceId(Unknown Source) ~[na:na]
+	at com.alerts.src.service.impl.EventServiceImpl.revokeAlert(EventServiceImpl.java:96) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_112]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_112]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_112]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_112]
+	at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1457) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_112]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_112]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_112]
+
+2017-10-02 17:17:11.215  INFO 60764 --- [RMI TCP Connection(2)-192.168.0.5] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-10-02 17:17:11.216  INFO 60764 --- [RMI TCP Connection(2)-192.168.0.5] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@527e5409: startup date [Mon Oct 02 17:16:23 IST 2017]; root of context hierarchy
+2017-10-02 17:17:11.219  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.219+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63902 #2 (2 connections now open)
+2017-10-02 17:17:11.220  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.219+0530 I COMMAND  [conn2] terminating, shutdown command received
+2017-10-02 17:17:11.220  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.219+0530 I FTDC     [conn2] Shutting down full-time diagnostic data capture
+2017-10-02 17:17:11.220  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.220+0530 I NETWORK  [conn1] end connection 127.0.0.1:63886 (1 connection now open)
+2017-10-02 17:17:11.221  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.221+0530 I CONTROL  [conn2] now exiting
+2017-10-02 17:17:11.222  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.221+0530 I NETWORK  [conn2] shutdown: going to close listening sockets...
+2017-10-02 17:17:11.222  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.221+0530 I NETWORK  [conn2] closing listening socket: 5
+2017-10-02 17:17:11.222  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.221+0530 I NETWORK  [conn2] closing listening socket: 6
+2017-10-02 17:17:11.222  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.222+0530 I NETWORK  [conn2] removing socket file: /tmp/mongodb-63885.sock
+2017-10-02 17:17:11.222  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.222+0530 I NETWORK  [conn2] shutdown: going to flush diaglog...
+2017-10-02 17:17:11.222  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.222+0530 I NETWORK  [conn2] shutdown: going to close sockets...
+2017-10-02 17:17:11.223  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.222+0530 I STORAGE  [conn2] WiredTigerKVEngine shutting down
+2017-10-02 17:17:11.315  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.315+0530 I STORAGE  [conn2] shutdown: removing fs lock...
+2017-10-02 17:17:11.315  INFO 60764 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:11.315+0530 I CONTROL  [conn2] dbexit:  rc: 0
+2017-10-02 17:17:11.331  INFO 60764 --- [RMI TCP Connection(2)-192.168.0.5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-10-02 17:17:11.515  WARN 60764 --- [Thread-3] d.f.e.p.store.CachingArtifactStore       : Already removed de.flapdoodle.embed.process.extract.ImmutableExtractedFileSet@70d9ef01 for PRODUCTION:OS_X:B64, emergency shutdown?
+2017-10-02 17:17:28.886  INFO 60784 --- [main] com.alerts.src.config.Application        : Starting Application on Parags-MacBook-Pro.local with PID 60784 (/Users/parag/Projects/EventPublishing/target/classes started by parag in /Users/parag/Projects/EventPublishing)
+2017-10-02 17:17:28.889  INFO 60784 --- [main] com.alerts.src.config.Application        : No active profile set, falling back to default profiles: default
+2017-10-02 17:17:28.934  INFO 60784 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@527e5409: startup date [Mon Oct 02 17:17:28 IST 2017]; root of context hierarchy
+2017-10-02 17:17:29.539  INFO 60784 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-10-02 17:17:29.836  INFO 60784 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-10-02 17:17:29.846  INFO 60784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-10-02 17:17:29.847  INFO 60784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-10-02 17:17:29.924  INFO 60784 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-10-02 17:17:29.924  INFO 60784 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 995 ms
+2017-10-02 17:17:30.139  INFO 60784 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-10-02 17:17:30.139  INFO 60784 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-10-02 17:17:30.140  INFO 60784 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'com.alerts.src.config.JerseyConfig' to [/*]
+2017-10-02 17:17:30.172  INFO 60784 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Initializing embedded MongoDB instance
+2017-10-02 17:17:30.203  INFO 60784 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : starting...
+2017-10-02 17:17:31.093  INFO 60784 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : extract mongodb-osx-x86_64-3.2.1/bin/mongod
+2017-10-02 17:17:31.094  INFO 60784 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : noting left
+2017-10-02 17:17:31.094  INFO 60784 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : finished
+2017-10-02 17:17:31.095  INFO 60784 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Starting embedded MongoDB instance
+2017-10-02 17:17:31.486  INFO 60784 --- [main] d.f.embed.process.runtime.Executable     : start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@1e5f4170
+2017-10-02 17:17:31.698  INFO 60784 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-10-02 17:17:31.750  INFO 60784 --- [cluster-ClusterId{value='59d22753bc4043ed709af0db', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27000
+2017-10-02 17:17:31.752  INFO 60784 --- [cluster-ClusterId{value='59d22753bc4043ed709af0db', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 1]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=496534}
+2017-10-02 17:17:32.070  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : note: noprealloc may hurt performance in many applications
+2017-10-02 17:17:32.086  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.085+0530 I CONTROL  [initandlisten] MongoDB starting : pid=60789 port=63918 dbpath=/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-8f27b3ad-197f-4599-9e33-14d912def14a 64-bit host=Parags-MacBook-Pro.local
+2017-10-02 17:17:32.086  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.085+0530 I CONTROL  [initandlisten] db version v3.2.2
+2017-10-02 17:17:32.086  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.085+0530 I CONTROL  [initandlisten] git version: 6e71d0d568e134c029203593b00a0103e7cdf30b
+2017-10-02 17:17:32.086  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.085+0530 I CONTROL  [initandlisten] allocator: system
+2017-10-02 17:17:32.086  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.085+0530 I CONTROL  [initandlisten] modules: none
+2017-10-02 17:17:32.086  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.085+0530 I CONTROL  [initandlisten] build environment:
+2017-10-02 17:17:32.087  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.086+0530 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-02 17:17:32.087  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.086+0530 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-02 17:17:32.087  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.086+0530 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", http: { enabled: false }, port: 63918 }, security: { authorization: "disabled" }, storage: { dbPath: "/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-8f27b3ad-197f-4599-9e33-14d912def14a", journal: { enabled: false }, mmapv1: { preallocDataFiles: false, smallFiles: true }, syncPeriodSecs: 0.0 } }
+2017-10-02 17:17:32.087  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.086+0530 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=9G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=0,log_size=2GB),statistics_log=(wait=0),,log=(enabled=false),
+2017-10-02 17:17:32.299  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.299+0530 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2017-10-02 17:17:32.300  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.300+0530 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-8f27b3ad-197f-4599-9e33-14d912def14a/diagnostic.data'
+2017-10-02 17:17:32.300  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.300+0530 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2017-10-02 17:17:32.395  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.395+0530 I NETWORK  [initandlisten] waiting for connections on port 63918
+2017-10-02 17:17:32.395  INFO 60784 --- [main] d.f.embed.process.runtime.Executable     : start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@6f099cef
+2017-10-02 17:17:32.402  INFO 60784 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:63918], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-10-02 17:17:32.403  INFO 60784 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:63918 to client view of cluster
+2017-10-02 17:17:32.405  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:32.405+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63919 #1 (1 connection now open)
+2017-10-02 17:17:32.407  INFO 60784 --- [cluster-ClusterId{value='59d22754bc4043ed709af0dc', description='null'}-localhost:63918] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:1}] to localhost:63918
+2017-10-02 17:17:32.407  INFO 60784 --- [cluster-ClusterId{value='59d22754bc4043ed709af0dc', description='null'}-localhost:63918] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:63918, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=422702}
+2017-10-02 17:17:32.408  INFO 60784 --- [cluster-ClusterId{value='59d22754bc4043ed709af0dc', description='null'}-localhost:63918] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2017-10-02 17:17:32.522  INFO 60784 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-10-02 17:17:32.643  INFO 60784 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-10-02 17:17:32.648  INFO 60784 --- [main] com.alerts.src.config.Application        : Started Application in 3.975 seconds (JVM running for 4.381)
+2017-10-02 17:17:40.254 ERROR 60784 --- [http-nio-8080-exec-1] o.g.j.s.spring.SpringComponentProvider   : None or multiple beans found in Spring context for type class com.alerts.src.service.impl.EventServiceImpl, skipping the type.
+2017-10-02 17:17:40.581  INFO 60784 --- [http-nio-8080-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:2}] to localhost:27000
+2017-10-02 17:17:42.956 ERROR 60784 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[.[.a.s.c.JerseyConfig]    : Servlet.service() for servlet [com.alerts.src.config.JerseyConfig] in context with path [] threw exception [java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at org.springframework.data.mongodb.repository.query.DtoInstantiatingConverter.convert(DtoInstantiatingConverter.java:76) ~[spring-data-mongodb-1.10.7.RELEASE.jar:na]
+	at org.springframework.data.repository.query.ResultProcessor$ChainingConverter.convert(ResultProcessor.java:221) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.repository.query.ResultProcessor$ChainingConverter$1.convert(ResultProcessor.java:209) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.repository.query.ResultProcessor$ChainingConverter.convert(ResultProcessor.java:221) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.repository.query.ResultProcessor.processResult(ResultProcessor.java:162) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.mongodb.repository.query.MongoQueryExecution$ResultProcessingConverter.convert(MongoQueryExecution.java:444) ~[spring-data-mongodb-1.10.7.RELEASE.jar:na]
+	at org.springframework.data.mongodb.repository.query.MongoQueryExecution$ResultProcessingExecution.execute(MongoQueryExecution.java:411) ~[spring-data-mongodb-1.10.7.RELEASE.jar:na]
+	at org.springframework.data.mongodb.repository.query.AbstractMongoQuery.execute(AbstractMongoQuery.java:94) ~[spring-data-mongodb-1.10.7.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:483) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:461) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:56) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at com.sun.proxy.$Proxy66.deleteByReferneceId(Unknown Source) ~[na:na]
+	at com.alerts.src.service.impl.EventServiceImpl.revokeAlert(EventServiceImpl.java:96) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_112]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_112]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_112]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_112]
+	at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1457) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_112]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_112]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_112]
+
+2017-10-02 17:17:48.689  INFO 60784 --- [RMI TCP Connection(2)-192.168.0.5] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-10-02 17:17:48.689  INFO 60784 --- [RMI TCP Connection(2)-192.168.0.5] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@527e5409: startup date [Mon Oct 02 17:17:28 IST 2017]; root of context hierarchy
+2017-10-02 17:17:48.693  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.693+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63927 #2 (2 connections now open)
+2017-10-02 17:17:48.693  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.693+0530 I COMMAND  [conn2] terminating, shutdown command received
+2017-10-02 17:17:48.694  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.693+0530 I FTDC     [conn2] Shutting down full-time diagnostic data capture
+2017-10-02 17:17:48.694  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.693+0530 I NETWORK  [conn1] end connection 127.0.0.1:63919 (1 connection now open)
+2017-10-02 17:17:48.695  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.695+0530 I CONTROL  [conn2] now exiting
+2017-10-02 17:17:48.696  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.695+0530 I NETWORK  [conn2] shutdown: going to close listening sockets...
+2017-10-02 17:17:48.696  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.695+0530 I NETWORK  [conn2] closing listening socket: 5
+2017-10-02 17:17:48.696  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.695+0530 I NETWORK  [conn2] closing listening socket: 6
+2017-10-02 17:17:48.696  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.696+0530 I NETWORK  [conn2] removing socket file: /tmp/mongodb-63918.sock
+2017-10-02 17:17:48.696  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.696+0530 I NETWORK  [conn2] shutdown: going to flush diaglog...
+2017-10-02 17:17:48.696  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.696+0530 I NETWORK  [conn2] shutdown: going to close sockets...
+2017-10-02 17:17:48.696  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.696+0530 I STORAGE  [conn2] WiredTigerKVEngine shutting down
+2017-10-02 17:17:48.780  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.780+0530 I STORAGE  [conn2] shutdown: removing fs lock...
+2017-10-02 17:17:48.780  INFO 60784 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:48.780+0530 I CONTROL  [conn2] dbexit:  rc: 0
+2017-10-02 17:17:48.808  INFO 60784 --- [RMI TCP Connection(2)-192.168.0.5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-10-02 17:17:48.987  INFO 60784 --- [Thread-4] d.f.e.process.runtime.ProcessControl     : stopOrDestroyProcess: process hasn't exited 
+2017-10-02 17:17:48.994  WARN 60784 --- [Thread-3] d.f.e.p.store.CachingArtifactStore       : Already removed de.flapdoodle.embed.process.extract.ImmutableExtractedFileSet@7354d154 for PRODUCTION:OS_X:B64, emergency shutdown?
+2017-10-02 17:17:56.338  INFO 60796 --- [main] com.alerts.src.config.Application        : Starting Application on Parags-MacBook-Pro.local with PID 60796 (/Users/parag/Projects/EventPublishing/target/classes started by parag in /Users/parag/Projects/EventPublishing)
+2017-10-02 17:17:56.342  INFO 60796 --- [main] com.alerts.src.config.Application        : No active profile set, falling back to default profiles: default
+2017-10-02 17:17:56.396  INFO 60796 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7dc19a70: startup date [Mon Oct 02 17:17:56 IST 2017]; root of context hierarchy
+2017-10-02 17:17:57.062  INFO 60796 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-10-02 17:17:57.430  INFO 60796 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-10-02 17:17:57.440  INFO 60796 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-10-02 17:17:57.441  INFO 60796 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-10-02 17:17:57.530  INFO 60796 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-10-02 17:17:57.530  INFO 60796 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1137 ms
+2017-10-02 17:17:57.795  INFO 60796 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-10-02 17:17:57.796  INFO 60796 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-10-02 17:17:57.796  INFO 60796 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'com.alerts.src.config.JerseyConfig' to [/*]
+2017-10-02 17:17:57.839  INFO 60796 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Initializing embedded MongoDB instance
+2017-10-02 17:17:57.879  INFO 60796 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : starting...
+2017-10-02 17:17:58.764  INFO 60796 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : extract mongodb-osx-x86_64-3.2.1/bin/mongod
+2017-10-02 17:17:58.765  INFO 60796 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : noting left
+2017-10-02 17:17:58.765  INFO 60796 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : finished
+2017-10-02 17:17:58.766  INFO 60796 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Starting embedded MongoDB instance
+2017-10-02 17:17:59.148  INFO 60796 --- [main] d.f.embed.process.runtime.Executable     : start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@2d2acd89
+2017-10-02 17:17:59.366  INFO 60796 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-10-02 17:17:59.431  INFO 60796 --- [cluster-ClusterId{value='59d2276fbc4043ed7cad6579', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27000
+2017-10-02 17:17:59.433  INFO 60796 --- [cluster-ClusterId{value='59d2276fbc4043ed7cad6579', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 1]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=516876}
+2017-10-02 17:17:59.826  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : note: noprealloc may hurt performance in many applications
+2017-10-02 17:17:59.842  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:59.841+0530 I CONTROL  [initandlisten] MongoDB starting : pid=60798 port=63941 dbpath=/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-31c7c354-3af1-4da8-9185-c81693dabc11 64-bit host=Parags-MacBook-Pro.local
+2017-10-02 17:17:59.842  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:59.841+0530 I CONTROL  [initandlisten] db version v3.2.2
+2017-10-02 17:17:59.842  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:59.842+0530 I CONTROL  [initandlisten] git version: 6e71d0d568e134c029203593b00a0103e7cdf30b
+2017-10-02 17:17:59.842  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:59.842+0530 I CONTROL  [initandlisten] allocator: system
+2017-10-02 17:17:59.842  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:59.842+0530 I CONTROL  [initandlisten] modules: none
+2017-10-02 17:17:59.842  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:59.842+0530 I CONTROL  [initandlisten] build environment:
+2017-10-02 17:17:59.842  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:59.842+0530 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-02 17:17:59.843  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:59.842+0530 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-02 17:17:59.843  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:59.842+0530 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", http: { enabled: false }, port: 63941 }, security: { authorization: "disabled" }, storage: { dbPath: "/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-31c7c354-3af1-4da8-9185-c81693dabc11", journal: { enabled: false }, mmapv1: { preallocDataFiles: false, smallFiles: true }, syncPeriodSecs: 0.0 } }
+2017-10-02 17:17:59.843  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:17:59.842+0530 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=9G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=0,log_size=2GB),statistics_log=(wait=0),,log=(enabled=false),
+2017-10-02 17:18:00.073  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:18:00.072+0530 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2017-10-02 17:18:00.073  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:18:00.073+0530 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-31c7c354-3af1-4da8-9185-c81693dabc11/diagnostic.data'
+2017-10-02 17:18:00.073  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:18:00.073+0530 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2017-10-02 17:18:00.171  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:18:00.170+0530 I NETWORK  [initandlisten] waiting for connections on port 63941
+2017-10-02 17:18:00.172  INFO 60796 --- [main] d.f.embed.process.runtime.Executable     : start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@35a0e495
+2017-10-02 17:18:00.184  INFO 60796 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:63941], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-10-02 17:18:00.184  INFO 60796 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:63941 to client view of cluster
+2017-10-02 17:18:00.187  INFO 60796 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:18:00.187+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63942 #1 (1 connection now open)
+2017-10-02 17:18:00.189  INFO 60796 --- [cluster-ClusterId{value='59d22770bc4043ed7cad657a', description='null'}-localhost:63941] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:1}] to localhost:63941
+2017-10-02 17:18:00.190  INFO 60796 --- [cluster-ClusterId{value='59d22770bc4043ed7cad657a', description='null'}-localhost:63941] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:63941, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=405139}
+2017-10-02 17:18:00.191  INFO 60796 --- [cluster-ClusterId{value='59d22770bc4043ed7cad657a', description='null'}-localhost:63941] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2017-10-02 17:18:00.476  INFO 60796 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-10-02 17:18:00.544  INFO 60796 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-10-02 17:18:00.549  INFO 60796 --- [main] com.alerts.src.config.Application        : Started Application in 4.46 seconds (JVM running for 4.942)
+2017-10-02 17:18:05.441 ERROR 60796 --- [http-nio-8080-exec-1] o.g.j.s.spring.SpringComponentProvider   : None or multiple beans found in Spring context for type class com.alerts.src.service.impl.EventServiceImpl, skipping the type.
+2017-10-02 17:18:05.810  INFO 60796 --- [http-nio-8080-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:2}] to localhost:27000
+2017-10-02 17:18:31.637 ERROR 60796 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[.[.a.s.c.JerseyConfig]    : Servlet.service() for servlet [com.alerts.src.config.JerseyConfig] in context with path [] threw exception [java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at org.springframework.data.mongodb.repository.query.DtoInstantiatingConverter.convert(DtoInstantiatingConverter.java:76) ~[spring-data-mongodb-1.10.7.RELEASE.jar:na]
+	at org.springframework.data.repository.query.ResultProcessor$ChainingConverter.convert(ResultProcessor.java:221) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.repository.query.ResultProcessor$ChainingConverter$1.convert(ResultProcessor.java:209) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.repository.query.ResultProcessor$ChainingConverter.convert(ResultProcessor.java:221) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.repository.query.ResultProcessor.processResult(ResultProcessor.java:162) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.mongodb.repository.query.MongoQueryExecution$ResultProcessingConverter.convert(MongoQueryExecution.java:444) ~[spring-data-mongodb-1.10.7.RELEASE.jar:na]
+	at org.springframework.data.mongodb.repository.query.MongoQueryExecution$ResultProcessingExecution.execute(MongoQueryExecution.java:411) ~[spring-data-mongodb-1.10.7.RELEASE.jar:na]
+	at org.springframework.data.mongodb.repository.query.AbstractMongoQuery.execute(AbstractMongoQuery.java:94) ~[spring-data-mongodb-1.10.7.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:483) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:461) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:56) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57) ~[spring-data-commons-1.13.7.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at com.sun.proxy.$Proxy66.deleteByReferneceId(Unknown Source) ~[na:na]
+	at com.alerts.src.service.impl.EventServiceImpl.revokeAlert(EventServiceImpl.java:96) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_112]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_112]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_112]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_112]
+	at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317) ~[jersey-common-2.25.1.jar:na]
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154) ~[jersey-server-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228) ~[jersey-container-servlet-core-2.25.1.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1457) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_112]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_112]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.20.jar:8.5.20]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_112]
+
+2017-10-02 17:20:29.179  INFO 60840 --- [main] com.alerts.src.config.Application        : Starting Application on Parags-MacBook-Pro.local with PID 60840 (/Users/parag/Projects/EventPublishing/target/classes started by parag in /Users/parag/Projects/EventPublishing)
+2017-10-02 17:20:29.183  INFO 60840 --- [main] com.alerts.src.config.Application        : No active profile set, falling back to default profiles: default
+2017-10-02 17:20:29.232  INFO 60840 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7dc19a70: startup date [Mon Oct 02 17:20:29 IST 2017]; root of context hierarchy
+2017-10-02 17:20:29.918  INFO 60840 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-10-02 17:20:30.308  INFO 60840 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-10-02 17:20:30.318  INFO 60840 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-10-02 17:20:30.319  INFO 60840 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-10-02 17:20:30.421  INFO 60840 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-10-02 17:20:30.421  INFO 60840 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1192 ms
+2017-10-02 17:20:30.713  INFO 60840 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-10-02 17:20:30.714  INFO 60840 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-10-02 17:20:30.714  INFO 60840 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'com.alerts.src.config.JerseyConfig' to [/*]
+2017-10-02 17:20:30.758  INFO 60840 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Initializing embedded MongoDB instance
+2017-10-02 17:20:30.800  INFO 60840 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : starting...
+2017-10-02 17:20:31.714  INFO 60840 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : extract mongodb-osx-x86_64-3.2.1/bin/mongod
+2017-10-02 17:20:31.715  INFO 60840 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : noting left
+2017-10-02 17:20:31.715  INFO 60840 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : finished
+2017-10-02 17:20:31.716  INFO 60840 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Starting embedded MongoDB instance
+2017-10-02 17:20:31.767 ERROR 60840 --- [main] d.f.e.process.runtime.AbstractProcess    : failed to call onAfterProcessStart()
+
+java.io.IOException: Could not start process: failed errno:48 Address already in use for socket: 127.0.0.1:27000
+2017-10-02T17:20:31.762+0530 E NETWORK  [initandlisten]   addr already in use
+
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.onAfterProcessStart(AbstractMongoProcess.java:79) [de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.process.runtime.AbstractProcess.<init>(AbstractProcess.java:114) ~[de.flapdoodle.embed.process-1.50.2.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.<init>(AbstractMongoProcess.java:53) [de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.MongodProcess.<init>(MongodProcess.java:50) [de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.MongodExecutable.start(MongodExecutable.java:44) [de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.MongodExecutable.start(MongodExecutable.java:34) [de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable.start(Executable.java:101) [de.flapdoodle.embed.process-1.50.2.jar:na]
+	at cz.jirutka.spring.embedmongo.EmbeddedMongoBuilder.build(EmbeddedMongoBuilder.java:102) [embedmongo-spring-1.3.1.jar:1.3.1]
+	at cz.jirutka.spring.embedmongo.EmbeddedMongoFactoryBean.getObject(EmbeddedMongoFactoryBean.java:52) [embedmongo-spring-1.3.1.jar:1.3.1]
+	at com.alerts.src.config.MongoConfig.mongoTemplate(MongoConfig.java:26) [classes/:na]
+	at com.alerts.src.config.MongoConfig$$EnhancerBySpringCGLIB$$ec0de104.CGLIB$mongoTemplate$0(<generated>) [classes/:na]
+	at com.alerts.src.config.MongoConfig$$EnhancerBySpringCGLIB$$ec0de104$$FastClassBySpringCGLIB$$b6c3f5d.invoke(<generated>) [classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) [spring-core-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at com.alerts.src.config.MongoConfig$$EnhancerBySpringCGLIB$$ec0de104.mongoTemplate(<generated>) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_112]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_112]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_112]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_112]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at com.alerts.src.config.Application.main(Application.java:10) [classes/:na]
+
+2017-10-02 17:20:31.768  INFO 60840 --- [main] d.f.e.process.runtime.AbstractProcess    : construct de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@34fe326d
+2017-10-02 17:20:31.884  WARN 60840 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoTemplate' defined in class path resource [com/alerts/src/config/MongoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.MongoTemplate]: Factory method 'mongoTemplate' threw exception; nested exception is java.io.IOException: Could not start process: failed errno:48 Address already in use for socket: 127.0.0.1:27000
+2017-10-02T17:20:31.762+0530 E NETWORK  [initandlisten]   addr already in use
+
+2017-10-02 17:20:31.886  INFO 60840 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2017-10-02 17:20:31.917  INFO 60840 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2017-10-02 17:20:31.925 ERROR 60840 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoTemplate' defined in class path resource [com/alerts/src/config/MongoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.MongoTemplate]: Factory method 'mongoTemplate' threw exception; nested exception is java.io.IOException: Could not start process: failed errno:48 Address already in use for socket: 127.0.0.1:27000
+2017-10-02T17:20:31.762+0530 E NETWORK  [initandlisten]   addr already in use
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.7.RELEASE.jar:1.5.7.RELEASE]
+	at com.alerts.src.config.Application.main(Application.java:10) [classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.MongoTemplate]: Factory method 'mongoTemplate' threw exception; nested exception is java.io.IOException: Could not start process: failed errno:48 Address already in use for socket: 127.0.0.1:27000
+2017-10-02T17:20:31.762+0530 E NETWORK  [initandlisten]   addr already in use
+
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	... 18 common frames omitted
+Caused by: java.io.IOException: Could not start process: failed errno:48 Address already in use for socket: 127.0.0.1:27000
+2017-10-02T17:20:31.762+0530 E NETWORK  [initandlisten]   addr already in use
+
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.onAfterProcessStart(AbstractMongoProcess.java:79) ~[de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.process.runtime.AbstractProcess.<init>(AbstractProcess.java:114) ~[de.flapdoodle.embed.process-1.50.2.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.<init>(AbstractMongoProcess.java:53) ~[de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.MongodProcess.<init>(MongodProcess.java:50) ~[de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.MongodExecutable.start(MongodExecutable.java:44) ~[de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.mongo.MongodExecutable.start(MongodExecutable.java:34) ~[de.flapdoodle.embed.mongo-1.50.5.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable.start(Executable.java:101) ~[de.flapdoodle.embed.process-1.50.2.jar:na]
+	at cz.jirutka.spring.embedmongo.EmbeddedMongoBuilder.build(EmbeddedMongoBuilder.java:102) ~[embedmongo-spring-1.3.1.jar:1.3.1]
+	at cz.jirutka.spring.embedmongo.EmbeddedMongoFactoryBean.getObject(EmbeddedMongoFactoryBean.java:52) ~[embedmongo-spring-1.3.1.jar:1.3.1]
+	at com.alerts.src.config.MongoConfig.mongoTemplate(MongoConfig.java:26) ~[classes/:na]
+	at com.alerts.src.config.MongoConfig$$EnhancerBySpringCGLIB$$ec0de104.CGLIB$mongoTemplate$0(<generated>) ~[classes/:na]
+	at com.alerts.src.config.MongoConfig$$EnhancerBySpringCGLIB$$ec0de104$$FastClassBySpringCGLIB$$b6c3f5d.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) ~[spring-core-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at com.alerts.src.config.MongoConfig$$EnhancerBySpringCGLIB$$ec0de104.mongoTemplate(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_112]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_112]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_112]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_112]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	... 19 common frames omitted
+
+2017-10-02 17:20:34.407  WARN 60840 --- [Thread-3] d.f.e.p.store.CachingArtifactStore       : Already removed de.flapdoodle.embed.process.extract.ImmutableExtractedFileSet@78e9bdf0 for PRODUCTION:OS_X:B64, emergency shutdown?
+2017-10-02 17:20:45.546  INFO 60847 --- [main] com.alerts.src.config.Application        : Starting Application on Parags-MacBook-Pro.local with PID 60847 (/Users/parag/Projects/EventPublishing/target/classes started by parag in /Users/parag/Projects/EventPublishing)
+2017-10-02 17:20:45.550  INFO 60847 --- [main] com.alerts.src.config.Application        : No active profile set, falling back to default profiles: default
+2017-10-02 17:20:45.601  INFO 60847 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7dc19a70: startup date [Mon Oct 02 17:20:45 IST 2017]; root of context hierarchy
+2017-10-02 17:20:46.269  INFO 60847 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-10-02 17:20:46.640  INFO 60847 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-10-02 17:20:46.649  INFO 60847 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-10-02 17:20:46.650  INFO 60847 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-10-02 17:20:46.741  INFO 60847 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-10-02 17:20:46.741  INFO 60847 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1144 ms
+2017-10-02 17:20:47.006  INFO 60847 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-10-02 17:20:47.007  INFO 60847 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-10-02 17:20:47.007  INFO 60847 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'com.alerts.src.config.JerseyConfig' to [/*]
+2017-10-02 17:20:47.054  INFO 60847 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Initializing embedded MongoDB instance
+2017-10-02 17:20:47.099  INFO 60847 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : starting...
+2017-10-02 17:20:48.033  INFO 60847 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : extract mongodb-osx-x86_64-3.2.1/bin/mongod
+2017-10-02 17:20:48.033  INFO 60847 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : noting left
+2017-10-02 17:20:48.034  INFO 60847 --- [main] d.f.embed.process.store.Downloader       : Extract /Users/parag/.embedmongo/osx/mongodb-osx-x86_64-3.2.1.tgz : finished
+2017-10-02 17:20:48.035  INFO 60847 --- [main] c.j.s.embedmongo.EmbeddedMongoBuilder    : Starting embedded MongoDB instance
+2017-10-02 17:20:48.423  INFO 60847 --- [main] d.f.embed.process.runtime.Executable     : start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@59546cfe
+2017-10-02 17:20:48.653  INFO 60847 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-10-02 17:20:48.716  INFO 60847 --- [cluster-ClusterId{value='59d22818bc4043edaf197861', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27000
+2017-10-02 17:20:48.718  INFO 60847 --- [cluster-ClusterId{value='59d22818bc4043edaf197861', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 1]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=785965}
+2017-10-02 17:20:49.135  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : note: noprealloc may hurt performance in many applications
+2017-10-02 17:20:49.151  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.150+0530 I CONTROL  [initandlisten] MongoDB starting : pid=60851 port=64003 dbpath=/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-7e22f0d4-45a2-46f0-bf85-c1d0fbeb1870 64-bit host=Parags-MacBook-Pro.local
+2017-10-02 17:20:49.151  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.150+0530 I CONTROL  [initandlisten] db version v3.2.2
+2017-10-02 17:20:49.151  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.150+0530 I CONTROL  [initandlisten] git version: 6e71d0d568e134c029203593b00a0103e7cdf30b
+2017-10-02 17:20:49.151  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.150+0530 I CONTROL  [initandlisten] allocator: system
+2017-10-02 17:20:49.151  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.150+0530 I CONTROL  [initandlisten] modules: none
+2017-10-02 17:20:49.151  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.150+0530 I CONTROL  [initandlisten] build environment:
+2017-10-02 17:20:49.151  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.150+0530 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-02 17:20:49.152  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.150+0530 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-02 17:20:49.152  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.150+0530 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", http: { enabled: false }, port: 64003 }, security: { authorization: "disabled" }, storage: { dbPath: "/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-7e22f0d4-45a2-46f0-bf85-c1d0fbeb1870", journal: { enabled: false }, mmapv1: { preallocDataFiles: false, smallFiles: true }, syncPeriodSecs: 0.0 } }
+2017-10-02 17:20:49.152  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.151+0530 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=9G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=0,log_size=2GB),statistics_log=(wait=0),,log=(enabled=false),
+2017-10-02 17:20:49.365  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.365+0530 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2017-10-02 17:20:49.366  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.366+0530 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/var/folders/3f/q5q4mn6j24gdwn_95n784m_80000gp/T/embedmongo-db-7e22f0d4-45a2-46f0-bf85-c1d0fbeb1870/diagnostic.data'
+2017-10-02 17:20:49.366  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.366+0530 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2017-10-02 17:20:49.457  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.457+0530 I NETWORK  [initandlisten] waiting for connections on port 64003
+2017-10-02 17:20:49.458  INFO 60847 --- [main] d.f.embed.process.runtime.Executable     : start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@2f521c4
+2017-10-02 17:20:49.467  INFO 60847 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:64003], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-10-02 17:20:49.468  INFO 60847 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:64003 to client view of cluster
+2017-10-02 17:20:49.470  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:20:49.470+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64005 #1 (1 connection now open)
+2017-10-02 17:20:49.473  INFO 60847 --- [cluster-ClusterId{value='59d22819bc4043edaf197862', description='null'}-localhost:64003] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:1}] to localhost:64003
+2017-10-02 17:20:49.474  INFO 60847 --- [cluster-ClusterId{value='59d22819bc4043edaf197862', description='null'}-localhost:64003] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:64003, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=456195}
+2017-10-02 17:20:49.474  INFO 60847 --- [cluster-ClusterId{value='59d22819bc4043edaf197862', description='null'}-localhost:64003] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2017-10-02 17:20:49.780  INFO 60847 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-10-02 17:20:49.834  INFO 60847 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-10-02 17:20:49.840  INFO 60847 --- [main] com.alerts.src.config.Application        : Started Application in 4.55 seconds (JVM running for 5.05)
+2017-10-02 17:20:54.041 ERROR 60847 --- [http-nio-8080-exec-1] o.g.j.s.spring.SpringComponentProvider   : None or multiple beans found in Spring context for type class com.alerts.src.service.impl.EventServiceImpl, skipping the type.
+2017-10-02 17:20:54.420  INFO 60847 --- [http-nio-8080-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:2}] to localhost:27000
+2017-10-02 17:23:10.476  INFO 60847 --- [RMI TCP Connection(2)-192.168.0.5] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-10-02 17:23:10.477  INFO 60847 --- [RMI TCP Connection(2)-192.168.0.5] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7dc19a70: startup date [Mon Oct 02 17:20:45 IST 2017]; root of context hierarchy
+2017-10-02 17:23:10.483  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.483+0530 I NETWORK  [conn1] end connection 127.0.0.1:64005 (0 connections now open)
+2017-10-02 17:23:10.484  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.484+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64047 #2 (1 connection now open)
+2017-10-02 17:23:10.485  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.485+0530 I COMMAND  [conn2] terminating, shutdown command received
+2017-10-02 17:23:10.485  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.485+0530 I FTDC     [conn2] Shutting down full-time diagnostic data capture
+2017-10-02 17:23:10.487  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.487+0530 I CONTROL  [conn2] now exiting
+2017-10-02 17:23:10.487  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.487+0530 I NETWORK  [conn2] shutdown: going to close listening sockets...
+2017-10-02 17:23:10.487  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.487+0530 I NETWORK  [conn2] closing listening socket: 5
+2017-10-02 17:23:10.487  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.487+0530 I NETWORK  [conn2] closing listening socket: 6
+2017-10-02 17:23:10.488  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.487+0530 I NETWORK  [conn2] removing socket file: /tmp/mongodb-64003.sock
+2017-10-02 17:23:10.488  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.488+0530 I NETWORK  [conn2] shutdown: going to flush diaglog...
+2017-10-02 17:23:10.488  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.488+0530 I NETWORK  [conn2] shutdown: going to close sockets...
+2017-10-02 17:23:10.488  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.488+0530 I STORAGE  [conn2] WiredTigerKVEngine shutting down
+2017-10-02 17:23:10.575  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.575+0530 I STORAGE  [conn2] shutdown: removing fs lock...
+2017-10-02 17:23:10.575  INFO 60847 --- [Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2017-10-02T17:23:10.575+0530 I CONTROL  [conn2] dbexit:  rc: 0
+2017-10-02 17:23:10.599  INFO 60847 --- [RMI TCP Connection(2)-192.168.0.5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-10-02 17:23:10.782  INFO 60847 --- [Thread-4] d.f.e.process.runtime.ProcessControl     : stopOrDestroyProcess: process hasn't exited 
+2017-10-02 17:23:10.786  WARN 60847 --- [Thread-3] d.f.e.p.store.CachingArtifactStore       : Already removed de.flapdoodle.embed.process.extract.ImmutableExtractedFileSet@77dcd188 for PRODUCTION:OS_X:B64, emergency shutdown?

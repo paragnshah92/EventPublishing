@@ -92,8 +92,14 @@ public class EventServiceImpl implements EventService {
 
 	@Override
 	public Response revokeAlert(String refernceId) {
-		eventRepository.deleteByReferneceId(refernceId);
-		return Response.status(204).build();
+		long count = eventRepository.deleteByReferneceId(refernceId);
+		int status;
+		if (count == 1) {
+			status = 204;
+		} else {
+			status = 304;
+		}
+		return Response.status(status).build();
 	}
 
 }

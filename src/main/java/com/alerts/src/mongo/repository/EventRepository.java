@@ -6,6 +6,6 @@ import com.alerts.src.mongo.model.EventModel;
 
 public interface EventRepository extends CrudRepository<EventModel, String>{
 	
-	void deleteByReferneceId(String referneceId);
+	Long deleteByReferneceId(String referneceId);
 	
 }
