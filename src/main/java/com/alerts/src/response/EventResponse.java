@@ -19,6 +19,24 @@ public class EventResponse {
 		private String referenceId;
 		private int delay;
 		private String description;
+		private String userId;
+		private boolean userFlag;
+
+		public String getUserId() {
+			return userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public boolean getUserFlag() {
+			return userFlag;
+		}
+
+		public void setUserFlag(boolean userFlag) {
+			this.userFlag = userFlag;
+		}
 
 		public String getReferenceId() {
 			return referenceId;

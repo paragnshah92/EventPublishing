@@ -4,7 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.TimeZone;
 
 import javax.ws.rs.core.Response;
@@ -17,51 +19,32 @@ import org.springframework.stereotype.Component;
 
 import com.alerts.src.mongo.model.EventModel;
 import com.alerts.src.mongo.repository.EventRepository;
+import com.alerts.src.mongo.repository.impl.EventRepositoryImpl;
 import com.alerts.src.request.EventRequest;
 import com.alerts.src.request.EventRequest.Alert;
 import com.alerts.src.response.EventResponse;
 import com.alerts.src.response.EventResponse.Alerts;
 import com.alerts.src.service.EventService;
+import com.alerts.src.service.manager.EventServiceManager;
 
 @Component
 public class EventServiceImpl implements EventService {
 
 	@Autowired
 	private EventRepository eventRepository;
+	
+	@Autowired
+	private EventServiceManager eventServiceManager;
 
-	Logger logger = LoggerFactory.getLogger(EventServiceImpl.class); 
+	Logger logger = LoggerFactory.getLogger(EventServiceImpl.class);
+	
+	private static final String INITSTATUS = "INITIATED";
+	private static final String REVOKESTATUS = "REVOKED";
 
 	@Override
 	public EventResponse getAlerts() {
-		EventResponse response = new EventResponse();
-		List<Alerts> alertList = new ArrayList<>();
-		try {
-			List<EventModel> eventModelList = (List<EventModel>) eventRepository.findAll();
-			if (eventModelList != null && !eventModelList.isEmpty()) {
-				for (EventModel model : eventModelList) {
-					TimeZone zone = TimeZone.getTimeZone("IST");
-					SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss.sss"); 
-					format.setTimeZone(zone);
-					Date date = format.parse(model.getCreatedAt());
-					Calendar cal = Calendar.getInstance(zone);
-					cal.setTime(date);
-					cal.add(Calendar.SECOND, model.getDelay());
-					Calendar current = Calendar.getInstance(zone);
-					int delay = (int) ((current.getTimeInMillis() - cal.getTimeInMillis()) / 1000);
-					if (delay > 0) {
-						Alerts alert = new Alerts();
-						alert.setDelay(delay);
-						alert.setDescription(model.getDescription());
-						alert.setReferenceId(model.getReferneceId());
-						alertList.add(alert);
-					}
-				}
-			}
-			response.setAlerts(alertList);
-		} catch (Exception e) {
-			logger.error("Issue while getting all the alerts : " , e.getMessage());
-		}
-		return response;
+		eventServiceManager.test();
+		return eventServiceManager.getAlerts();
 	}
 
 	@Override
@@ -76,6 +59,8 @@ public class EventServiceImpl implements EventService {
 			model.setDelay(alert.getDelay());
 			model.setDescription(alert.getDescription());
 			model.setReferneceId(alert.getReferenceId());
+			model.setUserId(alert.getUserId());
+			model.setStatus(INITSTATUS);
 			SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss.sss"); 
 			format.setTimeZone(TimeZone.getTimeZone("IST"));
 			model.setCreatedAt(format.format(new Date()));
@@ -92,13 +77,7 @@ public class EventServiceImpl implements EventService {
 
 	@Override
 	public Response revokeAlert(String refernceId) {
-		long count = eventRepository.deleteByReferneceId(refernceId);
-		int status;
-		if (count == 1) {
-			status = 204;
-		} else {
-			status = 304;
-		}
+		int status = eventServiceManager.revokeAlert(refernceId);
 		return Response.status(status).build();
 	}
 

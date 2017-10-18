@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Document(collection="event")
 public class EventModel implements Serializable {
 
-	private static final long serialVersionUID = 1053584296703078051L;
+	private static final long serialVersionUID = -2620290189039193261L;
 
 	@Id
 	private String id;
@@ -28,6 +28,17 @@ public class EventModel implements Serializable {
 	
 	@Field("created_at")
 	private String createdAt;
+	
+	@Field("user_id")
+	private String userId;
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 	public String getReferneceId() {
 		return referneceId;
